@@ -4,15 +4,17 @@ services:
     image: angular-app
     build: 
       context: ./angular-app
-      dockerfile: ./Dockerfile 
+      dockerfile: ./angular-app/Dockerfile 
     ports:
-      - 4200:80
+      - 80:80
     links: 
      - node-app
   node-app: 
     container_name: node-app-service
     restart: always
-    build: node-app
+    build:
+      context: ./node-app
+      dockerfile: ./node-app/Dockerfile
     ports:
       - '3000:3000'
     links: 
