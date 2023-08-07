@@ -3,7 +3,7 @@ services:
     image: angular-app
     build: angular-app
     ports:
-      - 80:80
+      - 4200:4200
     links:
      - node-app
   node-app:
