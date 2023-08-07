@@ -1,5 +1,5 @@
 FROM node:16-alpine AS build
-ENV NODE_OPTIONS="--max-old-space-size=8192"
+ENV NODE_OPTIONS="--max-old-space-size=2048"
 WORKDIR /app
 RUN npm cache clean --force
 COPY package.json ./
